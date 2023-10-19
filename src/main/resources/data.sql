@@ -1,0 +1,11 @@
+INSERT INTO Persons (IPN, Name, last_name) VALUES ('1111111117', 'One', 'First');
+-- INSERT INTO Persons (IPN, Name, LastName) VALUES ('3463897452', 'Tom', 'Second');
+-- INSERT INTO Persons (IPN, Name, LastName) VALUES ('3478569478', 'Jerry', 'Third');
+INSERT INTO Persons (IPN, Name, last_name) VALUES ('4472898994', 'Four', 'Fourth');
+INSERT INTO Persons (IPN, Name, last_name) VALUES ('1247659001', 'Five', 'Fifth');
+INSERT INTO Persons (IPN, Name, last_name) VALUES ('3451007459', 'Six', 'Sixth');
+INSERT INTO Persons (IPN, Name, last_name) VALUES ('1345679871', 'Seven', 'Seventh');
+-- INSERT INTO Persons (IPN, Name, LastName) VALUES ('5031469478', 'Tom', 'Eighth');
+-- INSERT INTO Persons (IPN, Name, LastName) VALUES ('4472898994', 'Tom', 'Ninth');
+-- INSERT INTO Persons (IPN, Name, LastName) VALUES ('1845856850', 'Tom', 'Tenth');
+-- INSERT INTO Persons (IPN, Name, LastName) VALUES ('3451007459', 'Tom', 'Eleventh');
