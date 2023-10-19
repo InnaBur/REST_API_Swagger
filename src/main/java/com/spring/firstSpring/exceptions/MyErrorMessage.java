@@ -5,12 +5,12 @@ import java.time.LocalDateTime;
 public class MyErrorMessage {
 
     private LocalDateTime data;
-    private String message;
+    private int status;
     private String details;
 
-    public MyErrorMessage(LocalDateTime data, String message, String details) {
+    public MyErrorMessage(LocalDateTime data, int status, String details) {
         this.data = data;
-        this.message = message;
+        this.status = status;
         this.details = details;
     }
 

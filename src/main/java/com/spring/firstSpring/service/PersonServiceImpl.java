@@ -1,12 +1,10 @@
-package com.spring.firstSpring.validation;
+package com.spring.firstSpring.service;
 
 import com.spring.firstSpring.PersonRepository;
-import com.spring.firstSpring.PersonService;
 import com.spring.firstSpring.dto.PersonDTO;
 import com.spring.firstSpring.entity.Person;
-import com.spring.firstSpring.exceptions.NotFoundException;
+import com.spring.firstSpring.exceptions.PersonNotFoundException;
 import com.spring.firstSpring.mapper.PersonMapperImpl;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.util.UriComponentsBuilder;
@@ -32,11 +30,11 @@ public class PersonServiceImpl implements PersonService {
         Optional<Person> personOptional = personRepository.findById(id);
 
         if (personOptional.isPresent()) {
-            return ResponseEntity.ok(personMapper.toDto(personOptional))
+            return ResponseEntity.ok(personOptional.get());
+        } else {
+            throw new PersonNotFoundException("Person not found");
         }
-        return personOptional
-                .map(person -> ResponseEntity.ok(personMapper.toDto(person)))
-                .orElseGet(() -> ;
+
     }
 
     @Override

@@ -1,4 +1,4 @@
-package com.spring.firstSpring;
+package com.spring.firstSpring.service;
 
 import com.spring.firstSpring.dto.PersonDTO;
 import org.springframework.http.ResponseEntity;

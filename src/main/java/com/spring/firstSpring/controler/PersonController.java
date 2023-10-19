@@ -1,7 +1,10 @@
 package com.spring.firstSpring.controler;
 
 import com.spring.firstSpring.dto.PersonDTO;
-import com.spring.firstSpring.validation.PersonServiceImpl;
+import com.spring.firstSpring.service.PersonServiceImpl;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -20,8 +23,12 @@ public class PersonController {
         this.personService = personService;
     }
 
+    @Operation(summary = "Gets customer by ID", description = "Customer must exist")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Ok"),
+            @ApiResponse(responseCode = "404", description = "Person not found")})
     @GetMapping("/id/{id}")
-    public ResponseEntity<PersonDTO> findById(@PathVariable Long id) {
+    public ResponseEntity<Object> findById(@PathVariable Long id) {
         return personService.findById(id);
     }
 
