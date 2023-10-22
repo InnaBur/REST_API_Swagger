@@ -12,7 +12,7 @@ public class MyValidator {
     ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
     Validator validator = factory.getValidator();
 
-    protected Set<ConstraintViolation<String>> validate(String ipn) {
+    public Set<ConstraintViolation<String>> validate(String ipn) {
         return validator.validate(ipn);
     }
 

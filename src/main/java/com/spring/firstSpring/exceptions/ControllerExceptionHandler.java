@@ -18,4 +18,10 @@ public class ControllerExceptionHandler extends ResponseEntityExceptionHandler {
         return new ResponseEntity<>(message, HttpStatus.NOT_FOUND);
     }
 
+    @ExceptionHandler(value = {ValidateException.class})
+    public ResponseEntity<MyErrorMessage> wrongData (ValidateException ex) {
+        MyErrorMessage message = new MyErrorMessage(LocalDateTime.now(), HttpStatus.BAD_REQUEST.value(), ex.getMessage());
+
+        return new ResponseEntity<>(message, HttpStatus.BAD_REQUEST);
+    }
 }

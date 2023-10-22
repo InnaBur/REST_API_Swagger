@@ -1,6 +1,6 @@
 INSERT INTO Persons (IPN, Name, last_name) VALUES ('1111111117', 'One', 'First');
 -- INSERT INTO Persons (IPN, Name, LastName) VALUES ('3463897452', 'Tom', 'Second');
--- INSERT INTO Persons (IPN, Name, LastName) VALUES ('3478569478', 'Jerry', 'Third');
+INSERT INTO Persons (IPN, Name, last_name) VALUES ('1111111117', 'One', 'Third');
 INSERT INTO Persons (IPN, Name, last_name) VALUES ('4472898994', 'Four', 'Fourth');
 INSERT INTO Persons (IPN, Name, last_name) VALUES ('1247659001', 'Five', 'Fifth');
 INSERT INTO Persons (IPN, Name, last_name) VALUES ('3451007459', 'Six', 'Sixth');

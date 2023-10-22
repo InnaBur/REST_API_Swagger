@@ -3,14 +3,15 @@ package com.spring.firstSpring;
 import com.spring.firstSpring.validation.IpnValidator;
 import jakarta.validation.ConstraintValidatorContext;
 import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.mock;
 
+@SpringBootTest
 class IpnValidatorTest {
 
     ConstraintValidatorContext context = mock(ConstraintValidatorContext.class);
-
 
     @Test
     void ifIpnIsInvalidByNumberOfDigits() {
