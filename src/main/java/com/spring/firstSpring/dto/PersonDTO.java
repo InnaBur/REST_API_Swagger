@@ -1,11 +1,13 @@
 package com.spring.firstSpring.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.spring.firstSpring.validation.IPN;
 import jakarta.validation.constraints.Size;
 
 public class PersonDTO {
 
-//    private String id;
+    @JsonIgnore
+    private Long id;
 
     @IPN
     private String ipn;
@@ -14,6 +16,16 @@ public class PersonDTO {
     private String name;
 
     private String lastName;
+
+    public PersonDTO(Long id, String ipn, String name, String lastName) {
+        this.id = id;
+        this.ipn = ipn;
+        this.name = name;
+        this.lastName = lastName;
+    }
+
+    public PersonDTO() {
+    }
 
     public String getIpn() {
         return ipn;

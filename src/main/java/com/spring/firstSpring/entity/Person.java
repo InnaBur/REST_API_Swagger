@@ -25,7 +25,8 @@ public class Person {
     public Person() {
     }
 
-    public Person(String ipn, String name, String lastName) {
+    public Person(Long id, String ipn, String name, String lastName) {
+        this.id = id;
         this.ipn = ipn;
         this.name = name;
         this.lastName = lastName;

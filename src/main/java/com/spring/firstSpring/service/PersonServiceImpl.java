@@ -23,6 +23,7 @@ public class PersonServiceImpl implements PersonService {
     private final PersonRepository personRepository;
     private final PersonMapperImpl personMapper;
 
+
     public PersonServiceImpl(PersonRepository personRepository, PersonMapperImpl personMapper) {
         this.personRepository = personRepository;
         this.personMapper = personMapper;
@@ -44,7 +45,7 @@ public class PersonServiceImpl implements PersonService {
                 .map(personMapper::toDto)
                 .filter(person -> person.getName().equals(name))
                 .toList();
-        if (personsDTOS.isEmpty()) {
+        if (!personsDTOS.isEmpty()) {
             return ResponseEntity.ok(personsDTOS);
         } else {
             throw new PersonNotFoundException("Person " + name + " not found");
@@ -67,7 +68,7 @@ public class PersonServiceImpl implements PersonService {
         Person person = personMapper.toEntity(newPersonRequest);
         Person savedPerson = personRepository.save(person);
         URI locationOfNewPerson = ucb
-                .path("persons/{id}")
+                .path("persons/id/{id}")
                 .buildAndExpand(savedPerson.getId())
                 .toUri();
         return ResponseEntity.created(locationOfNewPerson).build();

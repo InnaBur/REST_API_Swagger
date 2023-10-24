@@ -95,9 +95,7 @@ public class PersonController {
 
     @Operation(summary = "Deleted Person", description = "Delete new person from database")
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "204", description = "Success", content =
-                    {@Content(mediaType = "application/json", schema =
-                    @Schema(implementation = PersonDTO.class))}),
+            @ApiResponse(responseCode = "204", description = "Success", content =@Content),
             @ApiResponse(responseCode = "400", description = "Inputted data is invalid", content = {
                     @Content(mediaType = "application/json", schema = @Schema(implementation = MyErrorMessage.class))
             }) })
