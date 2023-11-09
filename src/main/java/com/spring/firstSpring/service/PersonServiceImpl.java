@@ -64,6 +64,7 @@ public class PersonServiceImpl implements PersonService {
     @Override
     public ResponseEntity<Void> createPerson(PersonDTO newPersonRequest, UriComponentsBuilder ucb) {
         throwValidateExceptionIfInvalidData(newPersonRequest);
+        throwValidateExceptionIfIpnExists(newPersonRequest);
 
         Person person = personMapper.toEntity(newPersonRequest);
         Person savedPerson = personRepository.save(person);
@@ -72,6 +73,12 @@ public class PersonServiceImpl implements PersonService {
                 .buildAndExpand(savedPerson.getId())
                 .toUri();
         return ResponseEntity.created(locationOfNewPerson).build();
+    }
+
+    private void throwValidateExceptionIfIpnExists(PersonDTO newPersonRequest) {
+        if (personRepository.existsByIpn(newPersonRequest.getIpn())) {
+            throw new ValidateException("Inputted IPN already exist");
+        }
     }
 
     @Override

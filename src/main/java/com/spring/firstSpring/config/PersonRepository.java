@@ -9,4 +9,5 @@ import java.util.Optional;
 public interface PersonRepository extends JpaRepository<Person, Long> {
 
     Optional<List<Person>> findPersonByName(String name);
+    boolean existsByIpn(String ipn);
 }

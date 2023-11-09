@@ -26,7 +26,7 @@ class IpnValidatorTest {
 
         IpnValidator ipnValidator = new IpnValidator();
 
-        boolean expected = ipnValidator.isValid("1111111117", context);
+        boolean expected = ipnValidator.isValid("1111111118", context);
         assertTrue(expected);
     }
 
@@ -42,7 +42,7 @@ class IpnValidatorTest {
         assertFalse(ipnValidator.isValid("1111111114", context));
         assertFalse(ipnValidator.isValid("1111111115", context));
         assertFalse(ipnValidator.isValid("1111111116", context));
-        assertFalse(ipnValidator.isValid("1111111118", context));
+        assertFalse(ipnValidator.isValid("1111111117", context));
         assertFalse(ipnValidator.isValid("1111111119", context));
 
 

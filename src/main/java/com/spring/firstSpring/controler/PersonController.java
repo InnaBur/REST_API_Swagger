@@ -88,7 +88,7 @@ public class PersonController {
                     @Content(mediaType = "application/json", schema = @Schema(implementation = MyErrorMessage.class))
             })
     })
-    @PutMapping("/{id}")
+    @PutMapping("/id/{id}")
     private ResponseEntity<Void> putPerson(@PathVariable Long id, @Valid @RequestBody PersonDTO personDto) {
         return personService.putPerson(id, personDto);
     }
