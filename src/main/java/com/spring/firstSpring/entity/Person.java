@@ -10,7 +10,7 @@ public class Person {
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
 
-    @Column
+    @Column(unique = true)
     private String ipn;
 
     @Column
@@ -18,9 +18,6 @@ public class Person {
 
     @Column (name = "last_name")
     private String lastName;
-
-//    @Column
-//    private int age;
 
     public Person() {
     }

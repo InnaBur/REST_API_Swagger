@@ -24,4 +24,5 @@ public class ControllerExceptionHandler extends ResponseEntityExceptionHandler {
 
         return new ResponseEntity<>(message, HttpStatus.BAD_REQUEST);
     }
+
 }

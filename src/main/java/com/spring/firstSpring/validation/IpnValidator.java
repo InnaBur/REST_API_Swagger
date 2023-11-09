@@ -26,7 +26,7 @@ public class IpnValidator implements ConstraintValidator<IPN, String> {
     private int calculateControlSum(String ipn) {
         int controlSum = 0;
         for (int i = 0; i < ipn.length() - 1; i++) {
-            controlSum += ipn.charAt(i) * FORMULA_DIGITS[i];
+            controlSum += Character.getNumericValue(ipn.charAt(i)) * FORMULA_DIGITS[i];
         }
         return controlSum;
     }

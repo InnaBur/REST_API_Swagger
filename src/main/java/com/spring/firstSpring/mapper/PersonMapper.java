@@ -5,6 +5,6 @@ import com.spring.firstSpring.entity.Person;
 
 public interface PersonMapper {
 
-    public PersonDTO toDto(Person person);
-    public Person toEntity(PersonDTO personDTO);
+    PersonDTO toDto(Person person);
+    Person toEntity(PersonDTO personDTO);
 }
